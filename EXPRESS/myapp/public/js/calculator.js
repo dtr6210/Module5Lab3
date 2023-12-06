@@ -31,21 +31,42 @@ async function calculateResult() {
       case "+":
         // result = num1 + num2;
         let sum = await fetch(`/calculator/add?num1=${num1}&num2=${num2}`)
-          .then(response => response.json())
-          .then(data => {
+          .then((response) => response.json())
+          .then((data) => {
             return data.result;
           });
-      result = sum
+        result = sum;
         console.log(sum);
         break;
       case "-":
-        result = num1 - num2;
+        // result = num1 - num2;
+        let difference = await fetch(`/calculator/subtract?num1=${num1}&num2=${num2}`)
+          .then((response) => response.json())
+          .then((data) => {
+            return data.result;
+          });
+        result = difference;
+        console.log(difference);
         break;
       case "*":
-        result = num1 * num2;
+        // result = num1 * num2;
+        let product = await fetch(`/calculator/multiply?num1=${num1}&num2=${num2}`)
+          .then((response) => response.json())
+          .then((data) => {
+            return data.result;
+          });
+        result = product;
+        console.log(product);
         break;
       case "/":
-        result = num1 / num2;
+        // result = num1 / num2;
+        let quotient = await fetch(`/calculator/divide?num1=${num1}&num2=${num2}`)
+          .then((response) => response.json())
+          .then((data) => {
+            return data.result;
+          });
+        result = quotient;
+        console.log(quotient);
         break;
     }
 
